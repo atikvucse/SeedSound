@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Bogus" Version="35.6.1" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="9.0.0" />
+    <PackageReference Include="NAudio.Lame" Version="2.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SeedSound.Core\SeedSound.Core.csproj" />
+  </ItemGroup>
+
+  <!-- Copy LAME native DLLs to output -->
+  <ItemGroup>
+    <ContentWithTargetPath Include="$(NuGetPackageRoot)naudio.lame\2.1.0\build\libmp3lame.32.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>libmp3lame.32.dll</TargetPath>
+    </ContentWithTargetPath>
+    <ContentWithTargetPath Include="$(NuGetPackageRoot)naudio.lame\2.1.0\build\libmp3lame.64.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>libmp3lame.64.dll</TargetPath>
+    </ContentWithTargetPath>
+  </ItemGroup>
+
+</Project>

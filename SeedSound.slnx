@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="SeedSound.Core/SeedSound.Core.csproj" />
+  <Project Path="SeedSound.Infrastructure/SeedSound.Infrastructure.csproj" />
+  <Project Path="SeedSound.Web/SeedSound.Web.csproj" />
+</Solution>
